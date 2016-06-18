@@ -14,8 +14,8 @@
     /////
 
     function onFileUpload(fileContent){
-      vm.fileContent = fileContent;
-      console.log($filter('csvFilter')(fileContent));
+      vm.fileContent = $filter('csvFilter')(fileContent);
+      console.log(vm);
     }
   }
 })();
