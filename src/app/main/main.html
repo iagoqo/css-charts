@@ -2,15 +2,15 @@
 
   <div class="jumbotron">
     <h1>CSV Charts</h1>
-    <p>
-      Choose a CSV file.
-    </p>
-      <form class="form">
-        <input name="file" type="file" on-file-upload="onFileUpload($fileContent)" />
-      </form>
+    <form class="form">
+      <div class="form-group">
+        <label for="file">Choose a CSV file</label>
+        <input name="file" type="file" on-file-upload="vm.onFileUpload($fileContent)" />
+      </div>
+    </form>
   </div>
 
-  <div class="row">
+  <div ng-if="vm.fileContent" class="row">
     <div class="col-xs-12">
       <table class="table table-hover">
         <tr ng-repeat="row in vm.fileContent">
