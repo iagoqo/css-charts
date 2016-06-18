@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($scope) {
+  function MainController($scope, $filter) {
     var vm = this;
 
     $scope.onFileUpload = onFileUpload;
@@ -15,7 +15,7 @@
 
     function onFileUpload(fileContent){
       vm.fileContent = fileContent;
-      console.log(fileContent);
+      console.log($filter('csvFilter')(fileContent));
     }
   }
 })();
